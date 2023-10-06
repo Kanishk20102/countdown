@@ -9,6 +9,8 @@ test("renders learn react link", () => {
 
 test("testing duplicate test", () => {
 	render(<App />);
-	const currentTimerVal = document.getElementById("currentTimerValue");
+	const currentTimerVal = parseInt(
+		document.getElementById("currentTimerValue").innerHTML
+	);
 	expect(currentTimerVal).toBeGreaterThan(0);
 });
