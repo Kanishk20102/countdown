@@ -56,9 +56,15 @@ function App() {
 						console.log(isPuased);
 					}}
 				/>
-				<div className="timer">{time}</div>
-				<button onClick={startTimer}>Start</button>
-				<button onClick={pauseTimer}>Pause</button>
+				<div id="currentTimerValue" className="timer">
+					{time}
+				</div>
+				<button id="startBtn" onClick={startTimer}>
+					Start
+				</button>
+				<button id="pauseBtn" onClick={pauseTimer}>
+					Pause
+				</button>
 			</header>
 		</div>
 	);

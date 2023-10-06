@@ -9,6 +9,6 @@ test("renders learn react link", () => {
 
 test("testing duplicate test", () => {
 	render(<App />);
-	const linkElement = screen.getByText(/learn react/i);
-	expect(linkElement).toBeInTheDocument();
+	const currentTimerVal = document.getElementById("currentTimerValue");
+	expect(currentTimerVal).toBeGreaterThan(0);
 });
