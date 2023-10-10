@@ -1,4 +1,4 @@
-name: Animal Farm Node.js CI
+name: Countdown App React
 
 on:
     push:
