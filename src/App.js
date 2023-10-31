@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 
 function App() {
 	const [time, setTime] = useState(10);
-	const [isPuased, setIsPaused] = useState(true);
+	const [isPaused, setIsPaused] = useState(true);
 
 	function pauseTimer() {
 		setIsPaused(true);
-		console.log(isPuased);
+		console.log(isPaused);
 	}
 	function startTimer() {
-		console.log(isPuased);
+		console.log(isPaused);
 		setIsPaused(false);
 	}
 
@@ -27,13 +27,13 @@ function App() {
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			if (time > 0 && !isPuased) {
+			if (time > 0 && !isPaused) {
 				setTime((red) => red - 1);
 			}
 		}, 1000);
 
 		return () => clearTimeout(timer);
-	}, [time, isPuased]);
+	}, [time, isPaused]);
 
 	return (
 		<div className="App">
@@ -53,7 +53,7 @@ function App() {
 					type="number"
 					onChange={(e) => {
 						setTime(e.target.value);
-						console.log(isPuased);
+						console.log(isPaused);
 					}}
 				/>
 				<div id="currentTimerValue" className="timer">
