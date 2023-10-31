@@ -45,6 +45,7 @@ function App() {
                 </div>
 				<input
 					type="number"
+					className="timerInput"
 					onChange={(e) => {
 						setTime(e.target.value);
 						console.log(isPaused);
@@ -53,12 +54,15 @@ function App() {
 				<div id="currentTimerValue" className="timer">
 					{time}
 				</div>
-				<button id="startBtn" onClick={startTimer}>
-					Start
-				</button>
-				<button id="pauseBtn" onClick={pauseTimer}>
-					Pause
-				</button>
+
+				<div className="dashboard">
+                    <button id="startBtn" className="btn startBtn" onClick={startTimer}>
+                        Start
+                    </button>
+                    <button id="pauseBtn" className="btn pauseBtn" onClick={pauseTimer}>
+                        Pause
+                    </button>
+				</div>
 			</header>
 
         <p className="devInstructions">
