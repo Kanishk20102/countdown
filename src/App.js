@@ -3,15 +3,21 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 function App() {
+    const [inputValue, setInputValue] = useState(10)
 	const [time, setTime] = useState(10);
 	const [isPaused, setIsPaused] = useState(true);
 
+    function handleInput(e) {
+        setInputValue(e.target.value)
+        setTime(e.target.value)
+    }
 	function pauseTimer() {
 		setIsPaused(true);
 		console.log(isPaused);
 	}
 	function startTimer() {
 		console.log(isPaused);
+		setInputValue("")
 		setIsPaused(false);
 	}
 
@@ -46,8 +52,9 @@ function App() {
 				<input
 					type="number"
 					className="timerInput"
-					onChange={(e) => {
-						setTime(e.target.value);
+					value={inputValue}
+					onInput={(e) => {
+						handleInput(e);
 						console.log(isPaused);
 					}}
 				/>
