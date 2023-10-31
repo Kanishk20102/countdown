@@ -10,6 +10,7 @@ function App() {
     function handleInput(e) {
         setInputValue(e.target.value)
         setTime(e.target.value)
+        setIsPaused(true)
     }
 	function pauseTimer() {
 		setIsPaused(true);
