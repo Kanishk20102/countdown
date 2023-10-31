@@ -3,15 +3,22 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 function App() {
+    const [inputValue, setInputValue] = useState(10)
 	const [time, setTime] = useState(10);
 	const [isPaused, setIsPaused] = useState(true);
 
+    function handleInput(e) {
+        setInputValue(e.target.value)
+        setTime(e.target.value)
+        setIsPaused(true)
+    }
 	function pauseTimer() {
 		setIsPaused(true);
 		console.log(isPaused);
 	}
 	function startTimer() {
 		console.log(isPaused);
+		setInputValue("")
 		setIsPaused(false);
 	}
 
@@ -39,33 +46,36 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer">
-					Learn React
-				</a>
+
+                <div className="App-guide">
+                    Enter a value and press start to start timer
+                </div>
 				<input
 					type="number"
-					onChange={(e) => {
-						setTime(e.target.value);
+					className="timerInput"
+					value={inputValue}
+					onInput={(e) => {
+						handleInput(e);
 						console.log(isPaused);
 					}}
 				/>
 				<div id="currentTimerValue" className="timer">
 					{time}
 				</div>
-				<button id="startBtn" onClick={startTimer}>
-					Start
-				</button>
-				<button id="pauseBtn" onClick={pauseTimer}>
-					Pause
-				</button>
+
+				<div className="dashboard">
+                    <button id="startBtn" className="btn startBtn" onClick={startTimer}>
+                        Start
+                    </button>
+                    <button id="pauseBtn" className="btn pauseBtn" onClick={pauseTimer}>
+                        Pause
+                    </button>
+				</div>
 			</header>
+
+        <p className="devInstructions">
+            Edit <code>src/App.js</code> and save to reload.
+        </p>
 		</div>
 	);
 }
