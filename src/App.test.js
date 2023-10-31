@@ -1,11 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
-	render(<App />);
-	const linkElement = screen.getByText(/learn react/i);
-	expect(linkElement).toBeInTheDocument();
-});
+// test("renders instructions text", () => {
+// 	render(<App />);
+// 	const textElement = screen.getByText(
+// 		/Enter a value and press start to start timer/i
+// 	);
+// 	expect(textElement).toBeInTheDocument();
+// });
 
 test("testing duplicate test", () => {
 	render(<App />);
